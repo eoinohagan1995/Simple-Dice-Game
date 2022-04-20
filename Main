@@ -1,0 +1,44 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+
+        //declaring variable for score
+        int score = 0;
+        int trys = 6;
+
+        //for loop that loops the program 5 times
+        for(int i = 0; i<7;i++){
+
+            //Declaring scanner for user input
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please guess a number, you have" + " " + trys + " " + "attempts left" );
+
+            //number entered saved into num variable
+            int num = scan.nextInt();
+
+            //declaring random object
+            Random ran = new Random();
+
+            //creating random int each time of loop
+            int x =ran.nextInt(7);
+
+
+            //if statement to display if user guessed right or wrong
+        if(num == x){
+            System.out.println("You guessed right!");
+            score ++;
+            }
+
+            else {
+                System.out.println("You guessed" + " " + num + " " +"and a" + " " + x + " " + "was rolled");
+            trys --;
+            }
+
+            }
+
+          //printing out the score
+        System.out.println("Your score is:" + " " + score);
+    }
+}
